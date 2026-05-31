@@ -985,3 +985,11 @@ body {
   text-align: center;         /* Căn giữa toàn bộ nội dung bên trong */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Tạo bóng đổ nhẹ cho nổi bật */
 }
+
+.goals-page-wrapper, 
+.app-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}

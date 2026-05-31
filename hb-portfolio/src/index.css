@@ -50,20 +50,20 @@
   }
 }
 
+/* Đảm bảo thẻ body cũng tràn hết cỡ màn hình */
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Ngăn chặn việc xuất hiện thanh cuộn ngang đáng ghét */
 }
 
+/* Tìm và sửa lại block #root giống như thế này */
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: none !important; /* Xóa bỏ giới hạn 1280px của Vite */
+  margin: 0 !important;       /* Xóa bỏ việc tự động căn giữa thu nhỏ bóp lề */
+  padding: 0 !important;      /* Xóa padding mặc định xung quanh */
 }
 
 h1,
