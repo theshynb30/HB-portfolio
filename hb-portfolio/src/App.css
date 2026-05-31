@@ -1067,3 +1067,8 @@ body {
   color: #ffb703 !important; /* Khi hover vào vùng chữ, tiêu đề phụ sẽ đổi sang màu vàng đặc trưng */
   transform: translateX(4px); /* Nhẹ nhàng dịch sang phải 4px để tạo điểm nhấn */
 }
+
+/* Chỉ áp dụng riêng cho banner có class main-home-banner của trang chính */
+.hero-banner.home-bg {
+  height: 100vh !important; /* Phóng to hết cỡ màn hình */
+}

@@ -38,6 +38,11 @@ const EXERCISES_CONTENT = {
 function App() {
   const [currentView, setCurrentView] = useState('home');
 
+  // Tự động nhảy lên đầu trang mỗi khi đổi trang mới
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, [currentView]); // Đoạn code này sẽ tự động kích hoạt bất cứ khi nào currentView thay đổi
+
   // ================= LOGIC ĐIỀU HƯỚNG BẰNG TRÌNH DUYỆT (GO BACK/FORWARD) =================
   const navigateToView = (viewName) => {
     setCurrentView(viewName);
