@@ -1,0 +1,987 @@
+/* Reset CSS cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1a1e24;
+  color: #ffffff;
+}
+
+/* Thanh điều hướng (Navbar) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px 0 0; /* ĐÃ SỬA: Lề trái = 0 để đẩy logo sát ra cạnh màn hình */
+  background-color: #0a0a0a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 70px;
+}
+
+.nav-title {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+}
+
+.nav-links li.active a {
+  color: #ffffff !important;
+  background-color: #2d3238;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.arrow {
+  font-size: 10px;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.search-icon {
+  color: #aaa;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Banner chính */
+.hero-banner {
+  background: linear-gradient(180deg, #2d3238 0%, #1a1e24 100%);
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #2d3238;
+}
+
+.hero-banner h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Phần thông tin sinh viên */
+.info-section {
+  background-color: #1a1e24;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.info-badge {
+  display: inline-block;
+  background-color: #373e47;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 35px;
+  cursor: pointer;
+  border: none;
+}
+
+.info-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  font-size: 15px;
+  color: #cccccc;
+}
+
+.info-item {
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .nav-title {
+    max-width: 100%;
+  }
+  .info-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .hero-banner h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* --- CSS BỔ SUNG CHO TRANG GIỚI THIỆU BẢN THÂN --- */
+
+.introduction-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* Khối phía trên: Chia đôi text bên trái, ảnh bên phải */
+.intro-section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.intro-text-block {
+  flex: 1;
+}
+
+.intro-text-block h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.intro-text-block p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+/* Khung xám bo góc giả lập vị trí đặt ảnh chân dung sinh viên */
+.intro-photo-placeholder {
+  width: 240px;
+  height: 300px;
+  background-color: #252a32;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777777;
+  font-size: 14px;
+  border: 1px dashed #3a414c;
+  flex-shrink: 0; /* Giữ nguyên kích thước ảnh không bị bóp méo */
+}
+
+/* Đường kẻ ngang mảnh */
+.intro-divider {
+  border: none;
+  border-top: 1px solid #2d3238;
+  margin: 5px 0;
+}
+
+/* Khối text chuyên ngành ở dưới */
+.intro-section-bottom {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #dddddd;
+  max-width: 850px;
+  text-align: left; /* THÊM DÒNG NÀY: Để các dấu chấm đầu dòng căn thẳng bên trái */
+}
+
+/* Tối ưu hiển thị mượt mà trên điện thoại di động */
+@media (max-width: 768px) {
+  .introduction-container {
+    padding: 30px 20px;
+  }
+  .intro-section-top {
+    flex-direction: column-reverse; /* Đẩy ảnh lên trên chữ khi màn hình nhỏ */
+    align-items: center;
+    gap: 25px;
+  }
+  .intro-photo-placeholder {
+    width: 200px;
+    height: 250px;
+  }
+}
+
+/* --- CSS BỔ SUNG CHO PHẦN SỞ THÍCH --- */
+
+.hobbies-section {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.hobbies-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+/* Lưới chia làm 2 cột bằng nhau cho Game và Nhạc */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.hobby-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Khung ảnh trống tỉ lệ chữ nhật ngang */
+.hobby-image-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Tạo tỉ lệ khung ảnh giống trong hình */
+  background-color: #252a32;
+  border: 1px dashed #3a414c;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.hobby-item h3 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.hobbies-footer-text {
+  font-size: 15px;
+  color: #aaaaaa;
+  line-height: 1.6;
+  margin-top: 20px;
+  padding-left: 5px;
+}
+
+/* Căn giữa nút hành động ở cuối trang */
+.bottom-action-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Tối ưu responsive trên màn hình điện thoại di động */
+@media (max-width: 768px) {
+  .hobbies-grid {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột dọc khi màn hình nhỏ */
+    gap: 40px;
+  }
+}
+
+/* --- CSS CHO BANNER MỤC TIÊU HỌC TẬP --- */
+
+.goals-banner {
+  /* Tạo nền tối với hiệu ứng chấm bi (dots) bằng CSS radial-gradient */
+  background-color: #1a1e24;
+  background-image: radial-gradient(#333a44 1px, transparent 1px);
+  background-size: 20px 20px; /* Khoảng cách giữa các chấm */
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #2d3238;
+}
+
+.goals-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  justify-content: center;
+}
+
+/* Đường gạch ngang hai bên tiêu đề */
+.goals-title-wrapper .line {
+  height: 2px;
+  background-color: #666;
+  flex-grow: 1;
+  max-width: 200px;
+}
+
+.goals-title-wrapper h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 4px;
+  white-space: nowrap;
+}
+
+/* Tối ưu cho di động */
+@media (max-width: 768px) {
+  .goals-title-wrapper h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  .goals-title-wrapper .line {
+    max-width: 50px;
+  }
+}
+
+/* --- CSS CHO NỘI DUNG CHI TIẾT MỤC TIÊU HỌC TẬP --- */
+
+.goals-detail-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.goals-text-block {
+  flex: 1;
+}
+
+.goals-text-block h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 22px;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Định dạng danh sách dạng dấu chấm ô vuông nhỏ giống mẫu */
+.goals-list {
+  list-style-type: square;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.goals-list li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+/* Khung giả lập vị trí đặt hình vẽ clip-art mục tiêu */
+.goals-icon-placeholder {
+  width: 260px;
+  height: 260px;
+  background-color: #252a32;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777777;
+  font-size: 13px;
+  border: 1px dashed #3a414c;
+  flex-shrink: 0; /* Đảm bảo khung không bị thu nhỏ sai tỉ lệ */
+}
+
+/* Tối ưu hiển thị dọc trên môi trường di động */
+@media (max-width: 768px) {
+  .goals-detail-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    gap: 35px;
+  }
+  
+  .goals-icon-placeholder {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* --- CSS BỔ SUNG CHO TRANG MỤC TIÊU VÀ ĐỊNH HƯỚNG --- */
+
+.goals-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 70px);
+}
+
+/* Đường kẻ phân cách căn chỉnh rộng hơn theo chiều ngang trang mẫu */
+.intro-divider-full {
+  border: none;
+  border-top: 1px solid #2d3238;
+  max-width: 1050px;
+  width: calc(100% - 80px);
+  margin: 10px auto;
+}
+
+/* Khoảng cách trước khi vào footer */
+.page-end-spacing {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* Định dạng thanh thông tin sinh viên nằm ở đáy trang */
+.footer-student-info {
+  background-color: #0a0a0a; /* Màu nền tối đồng bộ hệ thống */
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;   /* Xếp các dòng theo chiều dọc */
+  gap: 12px;                /* Khoảng cách giữa dòng trên và dòng dưới */
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-student-info .info-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  font-size: 15px;
+  color: #cccccc;
+}
+
+/* Tối ưu hiển thị responsive cho footer trên điện thoại */
+@media (max-width: 768px) {
+  .intro-divider-full {
+    width: calc(100% - 40px);
+  }
+  .footer-student-info .info-grid {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+/* --- CSS BỔ SUNG CHO BANNER MỤC TIÊU DỰ ÁN --- */
+
+/* Đảm bảo tiêu đề dự án có cùng style với tiêu đề học tập */
+/* Tinh chỉnh nhỏ để tiêu đề "DỰ ÁN" rộng và thoáng như ảnh mẫu */
+.project-goals-bg .goals-title-wrapper h1 {
+  font-size: 3.5rem; /* Tăng nhẹ kích thước */
+  letter-spacing: 5px; /* Tăng khoảng cách chữ */
+}
+
+/* Navbar active state sync */
+.nav-links li.active a {
+  background-color: #2d3238;
+}
+
+/* --- CSS CHO PHẦN MỤC TIÊU CỦA PORTFOLIO --- */
+
+.portfolio-goal-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 50px 40px 30px 40px;
+  width: 100%;
+}
+
+/* Tiêu đề căn giữa viết hoa hoàn toàn */
+.portfolio-goal-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 45px;
+}
+
+/* Giao diện hàng ngang chia hai cột trái/phải */
+.portfolio-goal-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* Khung ảnh trống bên trái tỉ lệ rộng rãi */
+.portfolio-image-placeholder {
+  width: 420px;
+  height: 300px;
+  background-color: #252a32;
+  border: 1px dashed #3a414c;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #777777;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* Đoạn văn bản thuyết minh bên phải */
+.portfolio-goal-text {
+  flex: 1;
+}
+
+/* Đoạn văn bản thuyết minh bên phải */
+.portfolio-goal-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #dddddd;
+  text-align: left; /* SỬA TỪ justify THÀNH left */
+}
+
+/* Tối ưu hóa khi xem trên thiết bị di động màn hình nhỏ */
+@media (max-width: 768px) {
+  .portfolio-goal-layout {
+    flex-direction: column; /* Chuyển thành hàng dọc xếp chồng */
+    gap: 30px;
+  }
+  
+  .portfolio-image-placeholder {
+    width: 100%;
+    max-width: 380px;
+    height: 250px;
+  }
+  
+  .portfolio-goal-text p {
+    text-align: left;
+  }
+}
+
+/* --- CSS CHO PHẦN DANH SÁCH BÀI TẬP DỰ ÁN --- */
+
+.project-content-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Kiểu chữ in nghiêng, căn lề hai bên cho đoạn giới thiệu dự án */
+.project-intro-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #dddddd;
+  text-align: left; /* SỬA TỪ justify THÀNH left */
+  font-style: italic;
+  max-width: 880px;
+  margin-bottom: 50px;
+}
+
+/* Cấu trúc lưới chia 3 cột đều nhau */
+.project-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px 50px; /* Khoảng cách hàng 35px và khoảng cách cột 50px */
+  width: 100%;
+  max-width: 850px;
+  margin-bottom: 40px;
+}
+
+/* Định dạng phong cách nút Bài tập (Màu xám xanh đồng bộ giao diện mẫu) */
+.project-exercise-btn {
+  background-color: #34424e;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.project-exercise-btn:hover {
+  background-color: #405160;
+  transform: translateY(-1px);
+}
+
+.project-exercise-btn:active {
+  transform: translateY(1px);
+}
+
+/* Responsive khi xem website trên máy tính bảng hoặc điện thoại */
+@media (max-width: 768px) {
+  .project-grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Thu về 2 cột trên tablet */
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-grid-container {
+    grid-template-columns: 1fr; /* Thu về 1 cột dọc trên mobile */
+    gap: 15px;
+  }
+  .project-intro-text {
+    text-align: left;
+  }
+}
+
+/* --- CSS ĐƯỜNG KẺ NẰM DƯỚI TIÊU ĐỀ CỦA BANNER --- */
+
+.goals-title-wrapper-under {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Kiểu chữ tiêu đề bài tập viết hoa sắc nét */
+.goals-title-wrapper-under h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Thanh gạch ngang màu vàng đồng định vị dưới chữ */
+.underline-gold {
+  width: 320px;          /* Chiều dài thanh gạch ngang */
+  height: 3.5px;         /* Độ dày nét gạch */
+  background-color: #8e8271; /* Màu sắc vàng đồng trầm theo chuẩn ảnh mẫu */
+  margin-top: 18px;      /* Khoảng cách giữa chữ và đường kẻ */
+  border-radius: 2px;
+}
+
+/* Đảm bảo hiệu ứng mượt mà khi hover vào nút quay lại */
+.info-badge {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.info-badge:hover {
+  background-color: #3a414c;
+}
+
+/* --- CSS CHI TIẾT BÀI TẬP CHI TIẾT --- */
+
+.exercise-detail-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Định dạng tiêu đề mục: MỤC TIÊU, QUÁ TRÌNH LÀM VIỆC,... */
+.exercise-section {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.exercise-section-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* Nội dung văn bản mô tả */
+.exercise-section-text {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #cccccc;
+  text-align: left; /* SỬA TỪ justify THÀNH left */
+  margin: 0;
+}
+
+/* Đường gạch ngang phân chia các mục */
+.exercise-divider {
+  border: none;
+  border-top: 1px solid #3b454e; /* Đường kẻ mờ mảnh theo tone tối */
+  margin: 35px 0;
+  width: 100%;
+}
+
+/* Khung bọc mã nhúng PDF Google Drive */
+.pdf-embed-container {
+  width: 100%;
+  max-width: 840px;
+  margin: 25px auto 0 auto;
+  border: 1px solid #2e3842;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: #1e1e1e;
+}
+
+.pdf-embed-container iframe {
+  border: none;
+  display: block;
+}
+
+/* Thiết lập vị trí relative cho thẻ li chứa dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+/* Định dạng menu con thả xuống */
+.dropdown-menu {
+  display: none; /* Ẩn menu mặc định */
+  position: absolute;
+  top: 100%; /* Hiển thị ngay sát phía dưới thanh navbar */
+  left: 0;
+  background-color: #0a0a0a; /* Màu nền tối trùng với giao diện hệ thống */
+  min-width: 220px;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  border-top: 2px solid transparent; /* Tạo khoảng đệm nhỏ nếu cần */
+}
+
+/* Định dạng các đường link bên trong menu con */
+.dropdown-menu li a {
+  color: #ffffff !important;
+  padding: 12px 20px;
+  display: block;
+  text-decoration: none;
+  text-align: left;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+/* Hiệu ứng khi di chuột qua các lựa chọn trong menu con */
+.dropdown-menu li a:hover {
+  background-color: #1f1f1f; /* Làm sáng nhẹ nền khi hover */
+}
+
+/* KÍCH HOẠT HIỂN THỊ DROPDOWN KHI HOVER CHUỘT VÀO VÙNG "GIỚI THIỆU" */
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Giữ hiệu ứng mũi tên đổi màu hoặc giữ trạng thái hover cho menu cha */
+.nav-dropdown:hover .dropdown-toggle {
+  color: #ffffff;
+}
+
+/* Định dạng chung cho từng dòng bên trong footer */
+.footer-row {
+  display: flex;
+  justify-content: center;  /* Căn giữa tất cả các mục trên dòng */
+  align-items: center;
+  gap: 35px;                /* Khoảng cách ngang giữa các item trên cùng dòng */
+  width: 100%;
+  flex-wrap: wrap;          /* Tự động xuống hàng nếu màn hình điện thoại quá nhỏ */
+}
+
+/* Định dạng text cho các item */
+.footer-student-info .info-item {
+  color: #ffffff;           /* Màu chữ trắng đồng bộ */
+  font-size: 14px;
+}
+
+/* Xử lý riêng cho link Facebook */
+.footer-student-info .footer-fb-link {
+  color: inherit;           /* Kế thừa màu trắng chuẩn từ .info-item, loại bỏ màu xanh mặc định */
+  text-decoration: none;    /* Bỏ gạch chân mặc định của thẻ <a> */
+  transition: color 0.2s ease;
+}
+
+/* Tạo hiệu ứng sáng nhẹ/gạch chân khi người dùng hover vào link FB */
+.footer-student-info .footer-fb-link:hover {
+  text-decoration: underline;
+  color: #d4af37;           /* Đổi sang tone vàng gold nhẹ khi hover để tăng trải nghiệm */
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  cursor: pointer; /* Thêm hiệu ứng bàn tay khi hover vào cụm logo */
+  transition: opacity 0.2s ease;
+  padding-left: 10px; /* Thụt nhẹ 10px tạo khoảng thở nhỏ quy chuẩn, có thể để 0 nếu muốn chạm khít */
+}
+
+.nav-brand:hover {
+  opacity: 0.85; /* Giảm nhẹ độ sáng khi rê chuột vào để người dùng biết click được */
+}
+
+.nav-logo {
+  height: 100%;       
+  width: auto;         
+  object-fit: contain; 
+  display: block;
+}
+
+/* ================= BACKGROUND IMAGES CHO CÁC BANNER ================= */
+/* Thiết lập chung cho các Banner */
+.hero-banner {
+  position: relative;
+  height: 300px; /* Chiều cao cố định tương đối của banner */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Hiệu ứng lớp phủ mờ (Overlay) bằng hiệu ứng linear-gradient giúp làm nổi bật chữ màu trắng */
+.home-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                    url('DJI_0087.jpg'); /* Công nghệ số */
+}
+
+.info-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600'); /* Y tế / Răng hàm mặt */
+}
+
+.goals-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('ChatGPT_Image_22_06_41_31_thg_5_2026.png'); /* Học tập, mục tiêu */
+}
+
+.project-goals-bg {
+  /* Ép thuộc tính background-image nhận ảnh trực tiếp */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('images (1).jpg') !important; 
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.project-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('images (2).jpg'); /* Trí tuệ nhân tạo AI */
+}
+
+.exercise-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                    url('images (4).jpg'); /* Bài tập đồ họa/kỹ thuật */
+}
+
+.summary-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                    url('images (5).jpg'); /* Tổng kết công nghệ */
+}
+
+/* ================= CẤU HÌNH BANNER TOÀN CỤC (ÁP DỤNG CHO TẤT CẢ CÁC TRANG) ================= */
+/* ================= CẤU HÌNH BANNER TRÀN MÀN HÌNH (100% RỘNG, 75% CAO) ================= */
+.hero-banner, .goals-banner {
+  width: 100% !important;      /* Chiếm toàn bộ chiều ngang sát mép màn hình */
+  height: 75vh !important;     /* Chiếm đúng 3/4 (75%) chiều dọc màn hình hiển thị */
+  margin: 0 auto !important;   /* Loại bỏ khoảng cách viền, ép sát lên trên */
+  border-radius: 0 !important; /* Xóa bo góc để tạo cảm giác tràn viền vô cực */
+  
+  /* Giữ nguyên các thuộc tính căn chỉnh nội dung chữ bên trong banner */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Gom tất cả các khối nội dung chi tiết về cùng tỷ lệ 75% và căn giữa để thẳng hàng với Banner */
+/* Nội dung chi tiết bên dưới banner thu gọn lại cho dễ đọc và căn giữa */
+.info-section,
+.introduction-container,
+.goals-detail-container,
+.portfolio-goal-container,
+.project-content-container,
+.exercise-detail-container {
+  width: 75% !important;        /* Hoặc chỉnh lên 80% nếu bạn muốn rộng hơn chút */
+  margin: 40px auto !important; /* Khoảng cách 40px phía dưới banner và tự động căn giữa */
+  box-sizing: border-box;
+}
+
+/* ================= CSS CHO NÚT GIỚI THIỆU TRONG BANNER ================= */
+.banner-intro-btn {
+  position: absolute;
+  bottom: 40px;          /* Cách đáy banner 40px (Bạn có thể tăng giảm tùy ý) */
+  left: 50%;
+  transform: translateX(-50%); /* Căn giữa chính xác theo chiều ngang */
+  
+  /* Thiết kế giao diện nút bấm (Tone màu vàng Gold hợp với underline-gold) */
+  padding: 12px 28px;
+  background-color: #ffcc00; 
+  color: #111111;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;    /* Bo tròn góc dạng viên thuốc hiện đại */
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease; /* Tạo hiệu ứng mượt mà khi di chuột */
+  z-index: 10;            /* Đảm bảo nút luôn nổi lên trên ảnh nền */
+}
+
+/* Hiệu ứng khi di chuột vào nút (Hover) */
+.banner-intro-btn:hover {
+  background-color: #ffffff;  /* Đổi sang nền trắng tươi sáng */
+  color: #0056b3;             /* Chữ đổi sang màu xanh thương hiệu */
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+  transform: translateX(-50%) translateY(-2px); /* Nhấc nhẹ nút lên tạo hiệu ứng 3D */
+}
+
+/* --- CSS CHO KHỐI LỜI CẢM ƠN MỚI TRÊN TRANG TỔNG KẾT --- */
+.thanks-title {
+  color: #ffffff;            /* Màu chữ trắng */
+  text-align: center;         /* Căn giữa tiêu đề */
+  font-size: 24px;            /* Kích thước chữ */
+  font-weight: 700;           /* In đậm */
+  text-transform: uppercase;   /* In hoa tiêu đề */
+  margin-bottom: 35px;        /* Khoảng cách với văn bản dưới */
+  letter-spacing: 1px;        /* Khoảng cách chữ nhẹ */
+}
+
+.thanks-text-content {
+  color: #ffffff;            /* Màu chữ trắng cho nội dung */
+  line-height: 1.9;           /* Khoảng cách dòng thoáng */
+  max-width: 850px;           /* Giới hạn chiều rộng văn bản để dễ đọc hơn */
+  margin: 0 auto;             /* Căn giữa khối văn bản */
+}
+
+.thanks-text-content p {
+  font-size: 16px;            /* Kích thước chữ */
+  margin-bottom: 25px;        /* Khoảng cách giữa các đoạn */
+  margin-top: 0;
+}
+
+/* Kiểu chữ in nghiêng cho câu cuối cùng */
+.thanks-text-content .final-thanks {
+  font-style: italic;         /* In nghiêng */
+  margin-top: 30px;           /* Khoảng cách lớn hơn với đoạn trên */
+  margin-bottom: 0;           /* Bỏ khoảng cách dưới cho gọn */
+}
+
+.thanks-block {
+  padding: 50px 40px;        /* Padding lớn để văn bản thoáng */
+  margin: 40px auto;         /* Căn giữa khối, tạo khoảng cách trên dưới */
+  max-width: 1050px;         /* Chiều rộng tối đa bằng các container khác */
+  width: calc(100% - 80px);   /* Căn giữa theo chiều ngang */
+  text-align: center;         /* Căn giữa toàn bộ nội dung bên trong */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Tạo bóng đổ nhẹ cho nổi bật */
+}
