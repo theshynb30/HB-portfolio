@@ -848,7 +848,7 @@ body {
 /* Hiệu ứng lớp phủ mờ (Overlay) bằng hiệu ứng linear-gradient giúp làm nổi bật chữ màu trắng */
 .home-bg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
-                    url('DJI_0087.jpg'); /* Công nghệ số */
+                    url('/DJI_0087.jpg'); /* Công nghệ số */
 }
 
 .info-bg {
@@ -858,13 +858,13 @@ body {
 
 .goals-bg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                    url('ChatGPT_Image_22_06_41_31_thg_5_2026.png'); /* Học tập, mục tiêu */
+                    url('/ChatGPT_Image_22_06_41_31_thg_5_2026.png'); /* Học tập, mục tiêu */
 }
 
 .project-goals-bg {
   /* Ép thuộc tính background-image nhận ảnh trực tiếp */
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                    url('images (1).jpg') !important; 
+                    url('/images (1).jpg') !important; 
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -872,17 +872,17 @@ body {
 
 .project-bg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                    url('images (2).jpg'); /* Trí tuệ nhân tạo AI */
+                    url('/images (2).jpg'); /* Trí tuệ nhân tạo AI */
 }
 
 .exercise-bg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-                    url('images (4).jpg'); /* Bài tập đồ họa/kỹ thuật */
+                    url('/images (4).jpg'); /* Bài tập đồ họa/kỹ thuật */
 }
 
 .summary-bg {
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-                    url('images (5).jpg'); /* Tổng kết công nghệ */
+                    url('/images (5).jpg'); /* Tổng kết công nghệ */
 }
 
 /* ================= CẤU HÌNH BANNER TOÀN CỤC (ÁP DỤNG CHO TẤT CẢ CÁC TRANG) ================= */
