@@ -993,3 +993,77 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Áp dụng cho các đoạn văn trong Lời cảm ơn và Bài học */
+.thanks-text-content p, 
+.exercise-section-text {
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  cursor: default;
+}
+
+/* Trạng thái khi di chuột qua */
+.thanks-text-content p:hover, 
+.exercise-section-text:hover {
+  transform: translateY(-3px) scale(1.01); /* Nhấc chữ lên 3px và phóng to 1% */
+  color: #fff; /* Ép chữ sáng trắng hẳn lên */
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2); /* Tạo hiệu ứng hào quang nhẹ quanh chữ */
+}
+
+/* Định hình lại thanh gạch vàng động */
+.underline-gold {
+  width: 0; /* Ban đầu ẩn đi */
+  height: 3px;
+  background-color: #ffb703; /* Màu vàng của bạn */
+  margin: 8px auto 0 auto;
+  transition: width 0.4s ease-in-out; /* Tạo hiệu ứng chạy dài mượt mà */
+}
+
+/* Khi di chuột vào vùng chứa tiêu đề, thanh gạch sẽ tràn ra 100% */
+.goals-title-wrapper-under:hover .underline-gold {
+  width: 120px; /* Độ dài bạn muốn thanh gạch hiển thị (có thể chỉnh thành 100%) */
+}
+
+.hero-banner {
+  filter: brightness(0.85) contrast(0.95); /* Làm ảnh hơi dịu xuống */
+  transition: filter 0.5s ease;
+}
+
+.hero-banner:hover {
+  filter: brightness(1) contrast(1); /* Trả về ảnh gốc sắc nét khi di chuột vào */
+}
+
+/* --- ĐỒNG BỘ HIỆU ỨNG NỔI KHỐI (HOVER FLOAT) CHO TOÀN BỘ TEXT --- */
+
+/* 1. Cấu hình trạng thái mượt mà ban đầu cho tất cả các khối chữ */
+.exercise-section div,
+.exercise-section-text,
+.thanks-text-content p {
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+              color 0.3s ease, 
+              text-shadow 0.3s ease,
+              background-color 0.3s ease;
+  cursor: default;
+  border-radius: 6px;
+  padding: 10px; /* Tạo khoảng đệm nhỏ để khi hover trông vuông vắn */
+  margin:-10px;  /* Triệt tiêu padding để không làm lệch dòng chữ ban đầu */
+  margin-bottom: 15px; /* Giữ khoảng cách dòng ổn định */
+}
+
+/* 2. Hiệu ứng đồng loạt nhấc lên và bừng sáng khi di chuột qua */
+.exercise-section div:hover,
+.exercise-section-text:hover,
+.thanks-text-content p:hover {
+  transform: translateY(-5px) scale(1.01); /* Nhấc chữ lên 5px và phóng to 1% */
+  color: #ffffff !important;                /* Ép chữ sáng trắng nổi bật trên nền tối */
+  background-color: rgba(255, 255, 255, 0.03); /* Thêm một lớp nền mờ cực nhẹ phía sau chữ */
+  text-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Tạo hiệu ứng hào quang mờ giúp chữ cực rõ nét */
+}
+
+/* Riêng phần tiêu đề mục con (BÀI HỌC RÚT RA / KHÓ KHĂN GẶP PHẢI) */
+.exercise-section h3 {
+  transition: transform 0.35s ease, color 0.3s ease;
+}
+.exercise-section div:hover h3 {
+  color: #ffb703 !important; /* Khi hover vào vùng chữ, tiêu đề phụ sẽ đổi sang màu vàng đặc trưng */
+  transform: translateX(4px); /* Nhẹ nhàng dịch sang phải 4px để tạo điểm nhấn */
+}
